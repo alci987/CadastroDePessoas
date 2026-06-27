@@ -20,6 +20,7 @@ public class PessoaModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long   id;
     private String nome;
+    @Column(unique = true) // permite apenas um único email
     private String email;
     int idade;
     // @ManyToOne: muitas pessoa tem apenas uma tarefa
