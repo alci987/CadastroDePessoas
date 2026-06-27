@@ -1,6 +1,9 @@
-package br.com.estudo.cadastrodepessoas;
+package br.com.estudo.cadastrodepessoas.Pessoas;
 
+import br.com.estudo.cadastrodepessoas.Tarefas.TarefasModel;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 // @Entity transforma uma classe em uma entidade do banco de dados
 @Entity
@@ -12,7 +15,11 @@ public class PessoaModel {
     private Long   id;
     private String nome;
     private String email;
-    int    idade;
+    int idade;
+    // @ManyToOne: muitas pessoa tem apenas uma tarefa
+    @ManyToOne
+    @JoinColumn(name = "tarefas_id")  // chave estrangeira
+    private TarefasModel tarefas;
 
     public PessoaModel() {
 
