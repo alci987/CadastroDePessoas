@@ -22,7 +22,9 @@ public class PessoaModel {
     private String nome;
     @Column(unique = true) // permite apenas um único email
     private String email;
-    int idade;
+//    @Column(name = "img_url")
+//    private String imgUrl;
+    private int idade;
     // @ManyToOne: muitas pessoa tem apenas uma tarefa
     @ManyToOne
     @JoinColumn(name = "tarefas_id")  // chave estrangeira
